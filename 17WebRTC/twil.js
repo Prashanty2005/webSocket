@@ -11,10 +11,10 @@ async function getTurnCredentials() {
     const token = await client.tokens.create({
       ttl: 3600 // 1 hour expiry
     });
-    
+
     // console.log('TURN Server Configuration:');
     // console.log(JSON.stringify(token.iceServers, null, 2));
-    
+
     console.log(token.iceServers);
     return token.iceServers;
   } catch (error) {
