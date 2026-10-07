@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern WebRTC Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Video Chat</h1>
+    </header>
+    
+    <main class="video-grid">
+      <div class="video-wrapper local">
+        <video id="localVideo" autoplay muted playsinline></video>
+        <span class="badge">You</span>
+      </div>
+      <div class="video-wrapper remote">
+        <video id="remoteVideo" autoplay playsinline></video>
+        <span class="badge">Remote Peer</span>
+      </div>
+    </main>
+
+    <div id="incomingCall" class="overlay hidden">
+      <div class="call-alert">
+        <h2>Incoming Call...</h2>
+        <p>Someone wants to video chat.</p>
+        <div class="action-buttons">
+          <button id="acceptBtn" class="btn-success">Accept</button>
+          <button id="rejectBtn" class="btn-danger">Decline</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="control-bar">
+      <button id="startBtn" class="btn-primary">📷 Start Camera</button>
+      <button id="callBtn" class="btn-success" disabled>📞 Call</button>
+      <button id="hangupBtn" class="btn-danger" disabled>❌ End Call</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
